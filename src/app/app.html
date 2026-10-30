@@ -1,3 +1,14 @@
 <app-en-tete></app-en-tete>
-<app-liste-cours></app-liste-cours>
+<main class="contenu-principal">
+  <section class="liste-container">
+    <app-liste-cours
+      (courSelectionne)="onSelectionCours($event)">
+    </app-liste-cours>
+  </section>
+
+  <aside class="detail-container">
+    <app-detail-cours [cours]="courSelectionne"></app-detail-cours>
+  </aside>
+</main>
+
 <app-pied-page></app-pied-page>

@@ -1,0 +1,25 @@
+.entete {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.logo-angular {
+  display: block;
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 15px;
+}
+
+.entete h1 {
+  margin: 0;
+  font-size: 30px;
+}
+
+.entete p {
+  color: #666;
+  margin-top: 10px;
+}

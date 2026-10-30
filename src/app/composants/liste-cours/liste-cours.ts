@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component , Output , EventEmitter } from '@angular/core';
 import { Cours } from '../../models';
 
 @Component({
@@ -35,5 +35,12 @@ export class ListeCours {
     places: 20
   }
   ];
+
+  @Output() courSelectionne = new EventEmitter<Cours>();
+  coursActif: Cours | null = null;
+  selectionner(c:Cours){
+    this.coursActif=c;
+    this.courSelectionne.emit(c);
+  } 
 
 }

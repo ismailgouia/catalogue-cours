@@ -45,7 +45,7 @@
 }
             <p>Catégorie {{c.categorie}}</p>
             <p>Durée {{c.duree}}</p>
-            <p>Places Disponibles {{c.places}}</p>
+            <p>{{ c.places | placesRestantes }}</p>
         </article>
     }
 

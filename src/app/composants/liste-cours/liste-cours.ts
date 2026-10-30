@@ -4,9 +4,10 @@ import { FormsModule} from '@angular/forms';
 import { FiltreCoursPipe } from './../../pipes/filtre-cours-pipe';
 import { TriCoursPipe } from './../../pipes/tri-cours-pipe';
 import { UpperCasePipe } from '@angular/common';
+import { PlacesRestantesPipe } from '../../pipes/places-restantes-pipe';
 
 @Component({
-  imports: [FormsModule , FiltreCoursPipe , TriCoursPipe , UpperCasePipe ],
+  imports: [FormsModule , FiltreCoursPipe , TriCoursPipe , UpperCasePipe , PlacesRestantesPipe ],
   selector: 'app-liste-cours',
   styleUrl: './liste-cours.css',
   templateUrl: './liste-cours.html',

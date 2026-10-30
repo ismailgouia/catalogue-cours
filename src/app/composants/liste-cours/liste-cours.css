@@ -15,3 +15,32 @@
   border: 2px solid #dd0031;
   background-color: #fdecef;
 }
+
+.badge {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.badge--frontend {
+  background-color: #e0f2fe;
+  color: #0369a1;
+}
+
+.badge--backend {
+  background-color: #dcfce7;
+  color: #15803d;
+}
+
+.badge--langage {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.badge--autre {
+  background-color: #f3e8ff;
+  color: #7e22ce;
+}

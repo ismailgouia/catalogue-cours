@@ -1,13 +1,19 @@
 import { Component , Output , EventEmitter } from '@angular/core';
 import { Cours } from '../../models';
+import { FormsModule} from '@angular/forms';
+import { FiltreCoursPipe } from './../../pipes/filtre-cours-pipe';
+import { TriCoursPipe } from './../../pipes/tri-cours-pipe';
+import { UpperCasePipe } from '@angular/common';
 
 @Component({
-  imports: [],
+  imports: [FormsModule , FiltreCoursPipe , TriCoursPipe , UpperCasePipe ],
   selector: 'app-liste-cours',
   styleUrl: './liste-cours.css',
   templateUrl: './liste-cours.html',
 })
 export class ListeCours {
+  recherche = '';
+  tri: 'asc' | 'desc' = 'asc';
   cours: Cours[] = [
     {
     titre : "Angular Avancé",

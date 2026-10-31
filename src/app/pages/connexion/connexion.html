@@ -1,0 +1,13 @@
+
+<h1>Connexion</h1>
+
+<input
+  type="text"
+  [(ngModel)]="nom"
+  placeholder="Votre nom">
+
+<button
+  (click)="seConnecter()"
+  [disabled]="!nom">
+  Se connecter
+</button>

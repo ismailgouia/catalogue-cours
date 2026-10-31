@@ -1,6 +1,6 @@
 export interface Cours{
     titre : string;
     categorie : string;
-    duree : String;
+    duree : string;
     places : number;
 }

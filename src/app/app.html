@@ -1,21 +1,42 @@
-<app-en-tete></app-en-tete>
-<main class="contenu-principal">
-  <section class="liste-container">
-    <app-liste-cours
-      (courSelectionne)="onSelectionCours($event)">
-    </app-liste-cours>
-  </section>
 
-  <aside class="detail-container">
-    <app-detail-cours [cours]="courSelectionne"></app-detail-cours>
-  </aside>
+<app-en-tete></app-en-tete>
+
+<nav class="menu">
+  <a
+    routerLink="/"
+    routerLinkActive="actif"
+    [routerLinkActiveOptions]="{ exact: true }">
+    Accueil
+  </a>
+
+  <a routerLink="/cours" routerLinkActive="actif">
+    Catalogue
+  </a>
+
+  <a routerLink="/mes-inscriptions" routerLinkActive="actif">
+    Mes inscriptions
+  </a>
+
+  @if (session.connecte()) {
+  <button (click)="deconnecter()">
+    Déconnexion ({{ session.nom() }})
+  </button>
+} @else {
+  <a routerLink="/connexion" routerLinkActive="actif">
+    Connexion
+  </a>
+}
+</nav>
+
+<main>
+  <router-outlet></router-outlet>
 </main>
 
 @defer (on viewport) {
   <app-pied-page></app-pied-page>
 } @placeholder {
   <div class="pied-page-placeholder">
-    Le pied de page sera chargé ici.
+    Pied de page en attente...
   </div>
 } @loading {
   <p>Chargement...</p>

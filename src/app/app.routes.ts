@@ -6,8 +6,12 @@ import { MesInscriptions } from './pages/mes-inscriptions/mes-inscriptions';
 import { PageDetail } from './pages/page-detail/page-detail';
 import { ListeCours } from './composants/liste-cours/liste-cours';
 import { authGuard } from './guards/auth-guard';
+import { Inscription } from './pages/inscription/inscription';
+
 
 export const routes: Routes = [
+  { path: 'cours/:id/inscription', component: Inscription, canActivate: [authGuard], title: 'Inscription', },
+
   { path: '', component: Accueil, title: 'Accueil' },
 
   { path: 'cours', component: ListeCours, title: 'Catalogue' },

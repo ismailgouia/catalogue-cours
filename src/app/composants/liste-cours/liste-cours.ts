@@ -4,8 +4,11 @@ import { FiltreCoursPipe } from './../../pipes/filtre-cours-pipe';
 import { TriCoursPipe } from './../../pipes/tri-cours-pipe';
 import { UpperCasePipe } from '@angular/common';
 import { PlacesRestantesPipe } from '../../pipes/places-restantes-pipe';
-import { Cours, COURS } from './../../donnees/cours';
+import { inject } from '@angular/core';
+import { Cours } from '../../donnees/cours';
+import { Catalogue } from '../../services/catalogue';
 import { RouterLink } from '@angular/router';
+
 
 @Component({
   imports: [FormsModule , FiltreCoursPipe , TriCoursPipe , UpperCasePipe , PlacesRestantesPipe , RouterLink ],
@@ -14,10 +17,14 @@ import { RouterLink } from '@angular/router';
   templateUrl: './liste-cours.html',
 })
 export class ListeCours {
+  
+
+    private catalogue = inject(Catalogue);
+    cours: Cours[] = this.catalogue.lister();
+
+
   recherche = '';
   tri: 'asc' | 'desc' = 'asc';
-    cours: Cours[] = COURS;
-
   @Output() courSelectionne = new EventEmitter<Cours>();
   coursActif: Cours | null = null;
   selectionner(c:Cours){

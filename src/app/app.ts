@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { Session } from './services/session';
+import { Inscriptions } from './services/inscriptions';
 
 import {
   RouterOutlet,
@@ -26,6 +27,7 @@ import { PiedPage } from './composants/pied-page/pied-page';
   styleUrl: './app.css'
 })
 export class App {
+  inscriptions = inject(Inscriptions);
     session = inject(Session);
   private router = inject(Router);
 
